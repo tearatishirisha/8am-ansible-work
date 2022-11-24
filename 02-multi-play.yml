@@ -1,5 +1,5 @@
 ---
-- name: Update n1 servers
+- name: Update n1 server
   hosts: n1
   
   tasks:
@@ -13,7 +13,7 @@
       path: /home/centos/new_dir_1
       state: directory    
 
-- name: Update n2 servers
+- name: Update n2 server
   hosts: n2
   
   tasks:
