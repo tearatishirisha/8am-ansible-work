@@ -13,4 +13,5 @@
     git:
       repo: https://github.com/ravi2krishna/ecomm.git
       dest: /var/www/html
+      force: yes
 ...
