@@ -5,7 +5,7 @@
  
   tasks:
   - name: Update Maintenance
-    yum:
+    copy:
       src: Maintenance.html
       dest: /var/www/html/index.html
 ...
