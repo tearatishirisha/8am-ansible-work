@@ -33,11 +33,11 @@
   tasks:
   - name: Create Directory
     file:
-      path: /home/centos/new_dir_group1
+      path: /home/centos/new_dir_group
       state: directory
 
   - name: Create Directory
     file:
-      path: /home/centos/new_dir_group2
+      path: /home/centos/new_dir_group1
       state: directory
 ...
