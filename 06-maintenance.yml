@@ -1,0 +1,11 @@
+---
+- name: Under Maintenance
+  hosts: g1
+  become: yes
+ 
+  tasks:
+  - name: Update Maintenance
+    yum:
+      src: Maintenance.html
+      dest: /var/www/html/index.html
+...
