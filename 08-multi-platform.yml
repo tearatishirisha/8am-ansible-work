@@ -1,0 +1,42 @@
+---
+- name: Install HTTP server
+  hosts: g1
+  become: yes
+ 
+  tasks:
+  - name: Install HTTPD
+    yum:
+      name: httpd
+      state: present
+    when ansible_distribution =="Amazon"  
+  
+  - name: Start HTTPD
+    service:
+      name: httpd
+      state: started
+    when ansible_distribution =="Amazon"     
+  
+  - name: Enabled HTTPD
+    service:
+      name: httpd
+      enabled: yes
+    when ansible_distribution =="Amazon"  
+
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: present
+    when ansible_distribution =="Ubuntu"
+      
+  - name: Start Apache2
+    service:
+      name: apache2
+      state: started
+    when ansible_distribution =="Ubuntu"  
+  
+  - name: Enabled Apache2
+    service:
+      name: apache2
+      enabled: yes
+    when ansible_distribution =="Ubuntu"  
+...
