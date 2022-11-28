@@ -1,2 +1,6 @@
----
+...
 # vars file for apache
+    myusername: siri
+    http_port_default: 80
+    http_port_1: 8080
+    http_port_2: 9090
