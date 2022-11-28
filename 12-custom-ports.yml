@@ -8,8 +8,13 @@
     http_port_2: 9090
 
   tasks:
-  - name: Update HTTP Config
+  - name: Update HTTPD Config
     template:
       src: httpd.j2
       dest: /etc/httpd/conf/httpd.conf
+
+  - name: Restart HTTPD 
+    service:
+      name: httpd
+      state: restarted
 ...
