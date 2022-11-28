@@ -1,0 +1,15 @@
+---
+- name: Variables Demo
+  hosts: g1
+  become: yes
+  vars:
+    http_port_default: 80
+    http_port_1: 8080
+    http_port_2: 9090
+
+  tasks:
+  - name: Update HTTP Config
+    template:
+      src: dynamic.j2
+      dest: /var/www/html/dynamic.html
+...
