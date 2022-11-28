@@ -1,0 +1,23 @@
+---
+- name: Handlers Demo
+  hosts: n1
+  become: yes
+  vars:
+    http_port_default: 80
+    http_port_1: 8080
+    http_port_2: 9090
+
+  tasks:
+  - name: Update HTTPD Config
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+    - Restart HTTPD
+    
+  handlers:
+  - name: Restart HTTPD 
+    service:
+      name: httpd
+      state: restarted
+...
